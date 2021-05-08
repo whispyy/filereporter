@@ -50,7 +50,7 @@ async function getNodeContent(dir) {
 exports.readPath = async (dir) => {
   const node = await getNodeContent(dir);
   return {
-    node,
+    subNode: node,
     size: getNodeSize(node),
     folderCount: folderCount(node),
     fileCount: fileCount(node),

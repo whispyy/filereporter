@@ -17,6 +17,18 @@ The command `file-reporter` will be accessible.
 With no argument it prompts report for current folder.
 It accepts as first argument relative or absolute path.
 
+## API
+
+### run 
+
+- `docker-compose up`
+
+or
+
+- `cd api && npm install && node index.js`
+
+Documentation (graphiql) available at : [localhost:4000](http://localhost:4000/)
+
 ## To do
 
 - graphql
