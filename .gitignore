@@ -1,0 +1,50 @@
+
+## Linux
+._*
+*~
+.directory
+config/karma/coverage
+
+## OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+## JetBrains
+.idea/
+.ideal_modules/
+*.ipr
+*.iws
+*.iml
+out/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+
+## VSCode
+.history
+
+## SublimeText
+*.sublime*
+
+## Vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+tags
+tags.lock
+tags.temp
