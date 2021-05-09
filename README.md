@@ -37,3 +37,4 @@ Documentation (graphiql) available at : [localhost:4000](http://localhost:4000/)
 - CI/CD
 - releases (changelog)
 - tests (unit, e2e..)
+- production build cmd
