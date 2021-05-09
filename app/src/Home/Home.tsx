@@ -2,30 +2,40 @@ import React, { useState } from 'react';
 import { useQuery } from 'urql';
 import { NodeFolder } from '../models/node';
 import DisplayResults from './components/DisplayResults';
+import GlobalResult from './components/GlobalResult';
 import InputSearch from './components/InputSearch';
 import './Home.css';
 import { DirectoryQuery } from './HomeApi';
 
-type Node = { node: NodeFolder };
+type Node = {
+  node: NodeFolder,
+};
 
 function Home() {
   const [path, setPath] = useState<string>('');
-  const [result, reexecuteQuery] = useQuery({
+  const [result, reexecuteQuery] = useQuery<Node>({
     query: DirectoryQuery,
     variables: { path },
   });
   const { data, fetching, error } = result;
-  const { node }: Node = data;
 
   const search = (path: string) => setPath(path);
 
   return (
-    <div>
+    <div className="Home-Container">
       <InputSearch
         disabled={fetching}
         onClick={search}
       />
-      {node && <DisplayResults node={node} />}
+
+      <GlobalResult node={data?.node} fetching={fetching} />
+
+      {data && data.node && 
+        <DisplayResults
+          node={data.node}
+          fetching={fetching}
+        />
+      }
     </div>
   );
 }
