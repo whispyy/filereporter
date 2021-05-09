@@ -12,7 +12,7 @@ function InputSearch({ disabled, onClick }: Props) {
   const [text, setText] = useState<string>('');
 
   const keyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key == ENTER_KEY) {
+    if (e.key === ENTER_KEY) {
       return search();
     }
   }

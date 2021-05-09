@@ -6,6 +6,7 @@ export interface SubNodeFolder {
   lastModifiedTime: string,
   isFile: boolean,
   isDirectory: boolean,
+  path: string,
 }
 
 export interface NodeFolder {

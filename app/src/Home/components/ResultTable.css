@@ -1,0 +1,44 @@
+.ResultTable {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: .5rem;
+}
+
+.ResultTable-Head,
+.ResultTable-Section__Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ResultTable-Head {
+  border: solid 1px #282c34;
+  font-weight: 500;
+}
+
+.ResultTable-Section {
+  display: flex;
+  flex-direction: column;
+}
+
+.ResultTable-Section__Row {
+  border-bottom: 1px solid rgba(58, 108, 201, 0.25);
+}
+
+.ResultTable__Item {
+  padding: .5rem;
+}
+
+.ResultTable__Item.-Small {
+  width: 3.3rem;
+}
+
+.ResultTable__Item.-Medium {
+  width: 6rem;
+}
+
+.ResultTable__Item.-Large {
+  width: 9rem;
+}

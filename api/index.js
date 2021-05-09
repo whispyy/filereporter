@@ -5,7 +5,7 @@ const typeDefs = gql`
   type Node {
     path: String,
     lastModifiedTime: String,
-    size: Int,
+    size: String,
     name: String,
     isFile: Boolean,
     isDirectory: Boolean,

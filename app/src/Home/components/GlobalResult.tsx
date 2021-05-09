@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Tile from '../../lib/components/Tile';
-import autoConvertFromByte from '../../lib/utils/unit-convert';
+import Tooltip from '../../lib/components/Tooltip';
+import { autoConvertFromByte, formatByte } from '../../lib/utils/unit-convert';
 import { NodeFolder } from '../../models/node';
 import './GlobalResult.css';
 
@@ -24,7 +25,13 @@ function GlobalResult({ node, fetching }: Props) {
       />
       <Tile
         title="Global Size"
-        description={`${autoConvertFromByte(node?.size || 0)}`}
+        description={(
+          <Tooltip
+            text={autoConvertFromByte(node?.size || 0)}
+            tooltipText={formatByte(node?.size || 0)}
+            position="bottom"
+          />
+        )}
         fetching={fetching}
       />
     </div>

@@ -29,12 +29,21 @@ or
 
 Documentation (graphiql) available at : [localhost:4000](http://localhost:4000/)
 
+### To improve
+
+- Put type definitions and resolvers away from `index.js`
+- Create custom scalar for Big Int because GraphQL is limiting to 32-bit int
+
+## APP
+
+
 ## To do
 
-- graphql
 - docker
-- swagger / graphiql
 - CI/CD
 - releases (changelog)
 - tests (unit, e2e..)
 - production build cmd
+
+- export style as common style (ie color, metrics..etc)
+- add a translation (i18n) system

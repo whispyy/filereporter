@@ -23,7 +23,7 @@ const units: Units = {
 }
 
 
-function autoConvertFromByte(value: number): string {
+export function autoConvertFromByte(value: number): string {
   const size: number = value.toString().length
   const conversionSize: string = size > MAX_SIZE ? MAX_SIZE.toString() : size.toString();
   const unit: Unit = units[conversionSize];
@@ -32,4 +32,9 @@ function autoConvertFromByte(value: number): string {
   return `${convertedValue} ${unit.suffix}`;
 }
 
-export default autoConvertFromByte;
+export function formatByte(value: number): string {
+  const v = parseInt(value.toString());
+  const formattedValue = v.toLocaleString();
+
+  return `${formattedValue} ${units[1].suffix}`;
+}

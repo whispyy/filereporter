@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'urql';
 import { NodeFolder } from '../models/node';
-import DisplayResults from './components/DisplayResults';
+import ResultTable from './components/ResultTable';
 import GlobalResult from './components/GlobalResult';
 import InputSearch from './components/InputSearch';
 import './Home.css';
@@ -30,12 +30,10 @@ function Home() {
 
       <GlobalResult node={data?.node} fetching={fetching} />
 
-      {data && data.node && 
-        <DisplayResults
-          node={data.node}
-          fetching={fetching}
-        />
-      }
+      <ResultTable
+        node={data?.node}
+        fetching={fetching}
+      />
     </div>
   );
 }

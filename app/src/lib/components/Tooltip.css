@@ -1,0 +1,34 @@
+.Tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #282c34;
+}
+
+.Tooltip .Tooltip__Text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #282c34;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  
+  position: absolute;
+  z-index: 1;
+}
+
+.Tooltip__Text_Top {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.Tooltip__Text_Bottom {
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.Tooltip:hover .Tooltip__Text {
+  visibility: visible;
+}

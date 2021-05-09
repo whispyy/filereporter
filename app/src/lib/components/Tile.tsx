@@ -3,7 +3,7 @@ import './Tile.css';
 
 type Props = {
   title: string,
-  description: string,
+  description: string | JSX.Element,
   fetching?: boolean,
 }
 function Tile({ title, description, fetching }: Props) {

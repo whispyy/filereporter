@@ -12,6 +12,7 @@ export const DirectoryQuery = `
         lastModifiedTime
         isFile
         isDirectory
+        path
       }
     }
   }`;
