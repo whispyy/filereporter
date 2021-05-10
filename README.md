@@ -1,3 +1,18 @@
+
+- [File Reporter](#file-reporter)
+  - [Overview](#overview)
+  - [TL;DR Run everything FAST](#tldr-run-everything-fast)
+  - [BackEnd: API & CLI](#backend-api--cli)
+    - [Run](#run)
+    - [Give permission to cli](#give-permission-to-cli)
+    - [Tests](#tests)
+    - [To improve](#to-improve)
+  - [FrontEnd: APP](#frontend-app)
+    - [Run](#run-1)
+    - [Tests](#tests-1)
+    - [Structure detail](#structure-detail)
+    - [To improve to be production ready](#to-improve-to-be-production-ready)
+
 # File Reporter
 
 ## Overview
@@ -7,7 +22,15 @@ The list is ordered by size and will read path to compute size, file and folders
 
 App provides a CLI, an API and UI app.
 
-## API & CLI
+You must have Node.js v14.0.0 or newer because there is a lot of optional chaining. 
+
+## TL;DR Run everything FAST
+
+Run BackEnd + FrontEnd (Using Node v14+ and docker) : `chmod +x ./run.sh && ./run.sh`
+
+Run Tests (Using Nodev14+) : `chmod +x ./run-test.sh && ./run-test.sh`
+
+## BackEnd: API & CLI
 
 Back end is using `node.js` and `graphql` (with apollo) to run the API.
 Readpath service is using `fs` and `path`.
@@ -35,6 +58,8 @@ CLI is using `cli-table` to format output
 
 ### Tests
 
+- `cd api && npm install && npm run test`
+
 ### To improve
 
 - Put type definitions and resolvers away from `index.js`
@@ -42,14 +67,19 @@ CLI is using `cli-table` to format output
 
 ---
 
-## APP
+## FrontEnd: APP
 
 To see more detail see [app/README.md](app/README.md) file.
 
 ### Run
 
-- `cd app & npm install`
-- `npm start`
+You should ensure backend is started before accessing front-end
+
+- `cd app && npm install && npm start`
+
+### Tests
+
+- `cd app && npm install && npm run test`
 
 ### Structure detail
 
@@ -63,4 +93,5 @@ To see more detail see [app/README.md](app/README.md) file.
 - export style as common style (ie color, metrics..etc)
 - add a translation (i18n) system
 - add more tests
+- improve Jenkins pipeline to run the production build created (ie spawn an instance)
 
