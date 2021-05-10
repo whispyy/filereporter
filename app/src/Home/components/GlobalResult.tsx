@@ -15,12 +15,12 @@ function GlobalResult({ node, fetching }: Props) {
     <div className="GlobalResult-Container">
       <Tile
         title="Number of files"
-        description={`${node?.fileCount}`}
+        description={`${node?.totalFiles}`}
         fetching={fetching}
       />
       <Tile
         title="Number of folders"
-        description={`${node?.folderCount}`}
+        description={`${node?.totalFolder}`}
         fetching={fetching}
       />
       <Tile

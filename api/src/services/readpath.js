@@ -13,6 +13,14 @@ function folderCount(node) {
   return node.reduce((total, { isDirectory }) => isDirectory ? total + 1 : total, 0);
 }
 
+function totalFiles(node) {
+  return node.reduce((total, { totalFiles }) => totalFiles ? total + totalFiles : total, 0);
+}
+
+function totalFolder(node) {
+  return node.reduce((total, { totalFolder }) => totalFolder ? total + totalFolder : total, 0);
+}
+
 async function getNodeContent(dir) {
   try {
     const files = await fs.readdir(dir);
@@ -37,6 +45,8 @@ async function getNodeContent(dir) {
         node.size = getNodeSize(subNode);
         node.fileCount = fileCount(subNode);
         node.folderCount = folderCount(subNode);
+        node.totalFiles = totalFiles(subNode) + node.fileCount;
+        node.totalFolder = totalFolder(subNode) + node.folderCount;
       }
       nodes.push(node);
     }));
@@ -49,10 +59,14 @@ async function getNodeContent(dir) {
 
 exports.readPath = async (dir) => {
   const node = await getNodeContent(dir);
+  const files = fileCount(node);
+  const folders = folderCount(node);
   return {
     subNode: node,
     size: getNodeSize(node),
-    folderCount: folderCount(node),
-    fileCount: fileCount(node),
+    folderCount: folders,
+    fileCount: files,
+    totalFiles: totalFiles(node) + files,
+    totalFolder: totalFolder(node) + folders,
   }
 }

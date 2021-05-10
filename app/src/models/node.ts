@@ -1,8 +1,8 @@
 export interface SubNodeFolder {
   name: string,
   size: number,
-  folderCount: number,
-  fileCount: number,
+  totalFolder: number,
+  totalFiles: number,
   lastModifiedTime: string,
   isFile: boolean,
   isDirectory: boolean,
@@ -11,7 +11,7 @@ export interface SubNodeFolder {
 
 export interface NodeFolder {
   size: number,
-  folderCount: number,
-  fileCount: number,
+  totalFolder: number,
+  totalFiles: number,
   subNode: SubNodeFolder[],
 }

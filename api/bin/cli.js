@@ -20,16 +20,16 @@ const formatter = (node) => {
       subNode.name,
       subNode.size.toLocaleString(),
       date,
-      subNode?.fileCount || 0,
-      subNode?.folderCount || 0
+      subNode?.totalFiles|| 0,
+      subNode?.totalFolder || 0
     ]);
   });
   console.log(table.toString());
 
   console.log('---');
   console.log(`Size : ${node.size.toLocaleString()} B`);
-  console.log(`Files: ${node.fileCount}`);
-  console.log(`Folders: ${node.folderCount}`);
+  console.log(`Files: ${node.totalFiles}`);
+  console.log(`Folders: ${node.totalFolder}`);
 }
 
 readPath(path).then(res => formatter(res));

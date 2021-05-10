@@ -23,6 +23,7 @@ function Home() {
 
   return (
     <div className="Home-Container">
+      {error && <span className="Error">{error.message}</span>}
       <InputSearch
         disabled={fetching}
         onClick={search}

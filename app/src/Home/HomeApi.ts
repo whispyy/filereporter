@@ -2,13 +2,13 @@ export const DirectoryQuery = `
   query ($path: String) {
     node(path: $path) {
       size
-      folderCount
-      fileCount
+      totalFiles
+      totalFolder
       subNode {
         name
         size
-        folderCount
-        fileCount
+        totalFiles
+        totalFolder
         lastModifiedTime
         isFile
         isDirectory

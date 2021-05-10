@@ -32,8 +32,8 @@ function ResultTable({ node, fetching }: Props) {
             </div>
             <div className="ResultTable__Item -Large">{el.name}</div>
             <div className="ResultTable__Item -Medium">{formattedDate(el.lastModifiedTime)}</div>
-            <div className="ResultTable__Item -Small">{el.fileCount}</div>
-            <div className="ResultTable__Item -Small">{el.folderCount}</div>
+            <div className="ResultTable__Item -Small">{el.totalFiles}</div>
+            <div className="ResultTable__Item -Small">{el.totalFolder}</div>
           </div>
         ))}
       </div>

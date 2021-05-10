@@ -12,6 +12,8 @@ const typeDefs = gql`
     subNode: [Node],
     fileCount: Int,
     folderCount: Int,
+    totalFiles: Int,
+    totalFolder: Int,
   }
 
   type Query {
