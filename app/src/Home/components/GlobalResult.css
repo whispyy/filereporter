@@ -4,7 +4,9 @@
   width: 100%;
   justify-content: center;
 }
+
 .GlobalResult-Container > * {
   margin: .5rem;
   width: 30%;
 }
+

@@ -5,6 +5,16 @@
   margin: .5rem;
 }
 
+@media (max-width: 400px) {
+  .ResultTable {
+    overflow-x: scroll;
+  }
+  .ResultTable-Head,
+  .ResultTable-Section {
+    min-width: 400px;
+  }
+}
+
 .ResultTable-Head,
 .ResultTable-Section__Row {
   display: flex;
@@ -16,6 +26,7 @@
 .ResultTable-Head {
   border: solid 1px #282c34;
   font-weight: 500;
+  background-color: #ecf0f1;
 }
 
 .ResultTable-Section {
