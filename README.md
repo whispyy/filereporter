@@ -40,16 +40,27 @@ CLI is using `cli-table` to format output
 - Put type definitions and resolvers away from `index.js`
 - Create custom scalar for Big Int because GraphQL is limiting to 32-bit int
 
+---
+
 ## APP
 
+To see more detail see [app/README.md](app/README.md) file.
 
-## To do
+### Run
 
-- docker
-- CI/CD
-- releases (changelog)
-- tests (unit, e2e..)
-- production build cmd
+- `cd app & npm install`
+- `npm start`
 
+### Structure detail
+
+- `src/lib` contains shared components and utils
+- `src/Home` module contains content of the page
+- `src/models` contains interfaces
+
+### To improve to be production ready
+
+- handle api in `.env` instead of hardcoded `localhost:4000`
 - export style as common style (ie color, metrics..etc)
 - add a translation (i18n) system
+- add more tests
+
