@@ -6,11 +6,11 @@ function getNodeSize(node) {
 }
 
 function fileCount(node) {
-  return node.filter(file => file.isFile).length;
+  return node.reduce((total, { isFile }) => isFile ? total + 1 : total, 0);
 }
 
 function folderCount(node) {
-  return node.filter(file => file.isDirectory).length;
+  return node.reduce((total, { isDirectory }) => isDirectory ? total + 1 : total, 0);
 }
 
 async function getNodeContent(dir) {

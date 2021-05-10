@@ -7,19 +7,13 @@ The list is ordered by size and will read path to compute size, file and folders
 
 App provides a CLI, an API and UI app.
 
-## Usage
+## API & CLI
 
-## CLI
+Back end is using `node.js` and `graphql` (with apollo) to run the API.
+Readpath service is using `fs` and `path`.
 
-In API folder give permission `chmod +x bin/cli.js` and `npm link`.
 
-The command `file-reporter` will be accessible. 
-With no argument it prompts report for current folder.
-It accepts as first argument relative or absolute path.
-
-## API
-
-### run 
+### Run 
 
 - `docker-compose up`
 
@@ -28,6 +22,18 @@ or
 - `cd api && npm install && node index.js`
 
 Documentation (graphiql) available at : [localhost:4000](http://localhost:4000/)
+
+### Give permission to cli
+
+- `chmod +x bin/cli.js` and `npm link`
+
+The command `file-reporter <path>` will be accessible. 
+With no argument it prompts report for current folder.
+It accepts as first argument relative or absolute path.
+
+CLI is using `cli-table` to format output
+
+### Tests
 
 ### To improve
 
