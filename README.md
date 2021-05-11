@@ -1,3 +1,4 @@
+# File Reporter
 
 - [File Reporter](#file-reporter)
   - [Overview](#overview)
@@ -7,13 +8,12 @@
     - [Give permission to cli](#give-permission-to-cli)
     - [Tests](#tests)
     - [To improve](#to-improve)
+    - [Troubleshooting](#troubleshooting)
   - [FrontEnd: APP](#frontend-app)
     - [Run](#run-1)
     - [Tests](#tests-1)
     - [Structure detail](#structure-detail)
     - [To improve to be production ready](#to-improve-to-be-production-ready)
-
-# File Reporter
 
 ## Overview
 
@@ -64,6 +64,16 @@ CLI is using `cli-table` to format output
 
 - Put type definitions and resolvers away from `index.js`
 - Create custom scalar for Big Int because GraphQL is limiting to 32-bit int
+
+
+### Troubleshooting
+
+- EPERM error : if you're obtaining EPERM error you might want to give access to the folder
+- ENOENT error : I have tried to handle this one by "faking" return a node wiht name ENOENT
+- FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+  - you might want to allocate more memory to node (ex: `export NODE_OPTIONS="--max-old-space-size=8192"` to allocate 8Go)
+  - another solution would probably be to handle concurrency by limiting parallel recursion at the same time.
+
 
 ---
 

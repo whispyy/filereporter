@@ -9,7 +9,7 @@ const path = args[0] || __dirname;
 const formatter = (node) => {
   const table = new Table({
     head: ['D/F', 'Name', 'Size (B)', 'Last Modified', 'Files', 'Folders'],
-    colWidths: [8, 15, 20, 15, 8, 8],
+    colWidths: [8, 15, 20, 15, 10, 10],
   });
 
   node.subNode.forEach(subNode => {
@@ -20,8 +20,8 @@ const formatter = (node) => {
       subNode.name,
       subNode.size.toLocaleString(),
       date,
-      subNode?.totalFiles|| 0,
-      subNode?.totalFolder || 0
+      subNode && subNode.totalFiles|| 0,
+      subNode && subNode.totalFolder || 0
     ]);
   });
   console.log(table.toString());

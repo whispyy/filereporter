@@ -27,7 +27,7 @@ async function getNodeContent(dir) {
     const nodes = [];
   
     await Promise.all(files.map(async file => {
-      const currentPath = path.join(dir, file);
+      const currentPath = path.resolve(dir, file);
       const stats = await fs.stat(currentPath);
   
       const node = {
@@ -53,6 +53,16 @@ async function getNodeContent(dir) {
   
     return [...nodes].sort((a, b) => b.size - a.size);
   } catch(err) {
+    if (err.code === 'ENOENT') {
+      return [{
+        path: dir,
+        lastModifiedTime: 0,
+        size: 0,
+        name: 'ENOENT',
+        isFile: false,
+        isDirectory: false,
+      }]
+    }
     throw err;
   }
 }
