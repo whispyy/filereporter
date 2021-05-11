@@ -1,15 +1,17 @@
 import React from 'react';
 import Tooltip from '../../lib/components/Tooltip';
 import { autoConvertFromByte, formatByte } from '../../lib/utils/unit-convert';
-import { NodeFolder } from '../../models/node';
+import { NodeFolder, SubNodeFolder } from '../../models/node';
 import './ResultTable.css';
 
 type Props = {
   node?: NodeFolder,
   fetching: boolean,
+  onItemClick: (el: SubNodeFolder) => void,
 }
-function ResultTable({ node, fetching }: Props) {
+function ResultTable({ node, fetching, onItemClick }: Props) {
   const formattedDate = (timestamp: string) => new Date(parseInt(timestamp)).toLocaleDateString();
+
   return (
     <div className="ResultTable">
       <div className="ResultTable-Head">
@@ -24,7 +26,10 @@ function ResultTable({ node, fetching }: Props) {
       <div className="ResultTable-Section">
         {fetching && <div className="spinner">Loading...</div>}
         {!fetching && node && node.subNode.map(el => (
-          <div className="ResultTable-Section__Row" key={el.path}>
+          <div className={`ResultTable-Section__Row ${el.isDirectory ? '-clickable' : ''}`}
+            key={el.path}
+            onClick={() => el.isDirectory && onItemClick(el)}
+          >
             {el.isDirectory && <div className="ResultTable__Item -Small">Dir</div>}
             {el.isFile && <div className="ResultTable__Item -Small">File</div>}
             <div className="ResultTable__Item -Small">

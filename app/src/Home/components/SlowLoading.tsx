@@ -1,11 +1,11 @@
-import React, { useState, ChangeEvent } from 'react'
+import React, { useState } from 'react'
 import useInterval from '../../lib/hooks/useInterval';
 import './SlowLoading.css';
 
 type Props = { showDelay?: number };
 
 function SlowLoading({ showDelay = 10 }: Props) {
-  const [delay, setDelay] = useState<number>(1000);
+  const [delay] = useState<number>(1000);
   const [count, setCount] = useState<number>(0);
 
   useInterval(

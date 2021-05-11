@@ -10,6 +10,7 @@ export interface SubNodeFolder {
 }
 
 export interface NodeFolder {
+  path: string,
   size: number,
   totalFolder: number,
   totalFiles: number,

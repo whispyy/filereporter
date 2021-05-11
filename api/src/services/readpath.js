@@ -72,6 +72,7 @@ exports.readPath = async (dir) => {
   const files = fileCount(node);
   const folders = folderCount(node);
   return {
+    path: dir,
     subNode: node,
     size: getNodeSize(node),
     folderCount: folders,

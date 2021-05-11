@@ -10,3 +10,31 @@
   padding: .25rem;
   font-weight: 500;
 }
+
+.BackButton {
+  align-self: flex-start;
+  margin: 0 .5rem;
+  padding: .25rem;
+
+  cursor: pointer;
+
+  border-width: 0;
+  outline: none;
+  border-radius: .25rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  
+  background-color: #282c34;
+  color: #ecf0f1;
+  
+  transition: background-color .3s;
+}
+
+.BackButton:hover,
+.BackButton:focus {
+  background-color: #3D4148;
+}
+
+.BackButton:disabled {
+  background-color: #B1B3B5;
+  cursor: not-allowed;
+}

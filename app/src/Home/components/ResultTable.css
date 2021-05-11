@@ -38,6 +38,11 @@
   border-bottom: 1px solid rgba(58, 108, 201, 0.25);
 }
 
+.ResultTable-Section__Row.-clickable:hover {
+  background-color:rgba(58, 108, 201, 0.25);
+  cursor: pointer;
+}
+
 .ResultTable__Item {
   padding: .5rem;
 }

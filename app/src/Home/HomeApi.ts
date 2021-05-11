@@ -1,6 +1,7 @@
 export const DirectoryQuery = `
   query ($path: String) {
     node(path: $path) {
+      path
       size
       totalFiles
       totalFolder
