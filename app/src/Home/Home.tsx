@@ -6,6 +6,7 @@ import GlobalResult from './components/GlobalResult';
 import InputSearch from './components/InputSearch';
 import './Home.css';
 import { DirectoryQuery } from './HomeApi';
+import SlowLoading from './components/SlowLoading';
 
 type Node = {
   node: NodeFolder,
@@ -24,6 +25,8 @@ function Home() {
   return (
     <div className="Home-Container">
       {error && <span className="Error">{error.message}</span>}
+      {fetching && <SlowLoading />}
+
       <InputSearch
         disabled={fetching}
         onClick={search}
