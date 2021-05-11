@@ -5,7 +5,8 @@
   - [TL;DR Run everything FAST](#tldr-run-everything-fast)
   - [BackEnd: API & CLI](#backend-api--cli)
     - [Run](#run)
-    - [Give permission to cli](#give-permission-to-cli)
+    - [GraphQL](#graphql)
+    - [About CLI](#about-cli)
     - [Tests](#tests)
     - [To improve](#to-improve)
     - [Troubleshooting](#troubleshooting)
@@ -46,13 +47,43 @@ or
 
 Documentation (graphiql) available at : [localhost:4000](http://localhost:4000/)
 
-### Give permission to cli
+### GraphQL
+
+Exemple of request:
+
+```
+{
+  node(path: ".") {
+    size
+    folderCount
+    fileCount
+    subNode {
+      name
+      size
+      lastModifiedTime
+      isFile
+      isDirectory
+      totalFiles
+      totalFolder
+    }
+  }
+}
+```
+
+
+### About CLI
 
 - `chmod +x bin/cli.js` and `npm link`
 
-The command `file-reporter <path>` will be accessible. 
+or
+
+- `cd api && npm install -g .`
+
+The command `file-report <path>` will be accessible. 
 With no argument it prompts report for current folder.
 It accepts as first argument relative or absolute path.
+
+If you don't want the global command you can just use `npm run cli`
 
 CLI is using `cli-table` to format output
 
@@ -99,9 +130,11 @@ You should ensure backend is started before accessing front-end
 
 ### To improve to be production ready
 
+- add loging system such as Sentry
 - handle api in `.env` instead of hardcoded `localhost:4000`
 - export style as common style (ie color, metrics..etc)
 - add a translation (i18n) system
-- add more tests
+- add more tests (e2e, units)
 - improve Jenkins pipeline to run the production build created (ie spawn an instance)
+- setup analytics
 

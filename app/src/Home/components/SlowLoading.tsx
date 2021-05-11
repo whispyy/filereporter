@@ -21,7 +21,7 @@ function SlowLoading({ showDelay = 10 }: Props) {
     <>
       {(count >= showDelay) && 
         <div className="SlowLoading">
-          Slow search can happen when scanning large amounts of files
+          Slow search can happen when scanning large amount of files
         </div>
       }
     </>
