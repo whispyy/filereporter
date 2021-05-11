@@ -68,8 +68,8 @@ CLI is using `cli-table` to format output
 
 ### Troubleshooting
 
-- EPERM error : if you're obtaining EPERM error you might want to give access to the folder
-- ENOENT error : I have tried to handle this one by "faking" return a node wiht name ENOENT
+- EPERM error : I am ignoring this error to continue crawling files and folder
+- ENOENT error : Same as previous
 - FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
   - you might want to allocate more memory to node (ex: `export NODE_OPTIONS="--max-old-space-size=8192"` to allocate 8Go)
   - another solution would probably be to handle concurrency by limiting parallel recursion at the same time.

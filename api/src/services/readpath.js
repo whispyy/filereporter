@@ -53,12 +53,12 @@ async function getNodeContent(dir) {
   
     return [...nodes].sort((a, b) => b.size - a.size);
   } catch(err) {
-    if (err.code === 'ENOENT') {
+    if (err.code === 'ENOENT' || err.code === 'EPERM') {
       return [{
         path: dir,
         lastModifiedTime: 0,
         size: 0,
-        name: 'ENOENT',
+        name: err.code,
         isFile: false,
         isDirectory: false,
       }]
